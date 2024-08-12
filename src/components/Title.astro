@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+const { title, text } = Astro.props;
+---
+
+<header>
+  <h3>{title}</h3>
+  <p>{text}</p>
+</header>
+<style>
+  header {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-shrink: 0;
+    text-wrap: wrap;
+  }
+
+  h3 {
+    font-size: 2.85rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+  }
+</style>

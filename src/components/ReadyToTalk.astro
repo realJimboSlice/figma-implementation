@@ -1,0 +1,98 @@
+---
+import "../styles/global.css";
+import AboveTitle from "../components/AboveTitle.astro";
+import GridCols from "../components/GridCols.astro";
+import "../styles/global.css";
+---
+
+<section>
+  <div class="blackflex">
+    <div>
+      <div class="padding">
+        <GridCols cols="6">
+          <AboveTitle title="contact" variant="black" />
+        </GridCols>
+
+        <h3>Ready To Talk?</h3>
+      </div>
+      <div></div>
+    </div>
+    <div>
+      <figure>
+        <img src="./images/hands-in.png" alt="" />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .btn {
+    display: flex;
+    justify-content: right;
+  }
+  h3 {
+    color: #fff;
+    font-family: "Cabin", sans-serif;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2625rem;
+    margin: 1rem;
+  }
+  p {
+    color: #fff;
+    margin: 1rem;
+  }
+  .padding {
+    padding: 4rem;
+  }
+
+  .blackflex {
+    display: flex;
+  }
+  figure {
+    position: relative;
+    display: flex;
+    justify-content: right;
+
+    &::before {
+      --diamonds-count: 15;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      inset: 80px 290px auto auto;
+      inline-size: calc(var(--diamonds-count) * 1.34rem - 0.67rem);
+      aspect-ratio: 1;
+      background: linear-gradient(
+          135deg,
+          #be965d,
+          #976f40,
+          #c99b61,
+          #f0be7b,
+          #ffcb85,
+          #eebc79,
+          #c0935b,
+          #976f40
+        )
+        0 0 / 100% 100%;
+      mask:
+        var(--diamonds) 0 0 / 1.34rem 1.34rem,
+        var(--diamonds) 0.67rem 0.67rem / 1.34rem 1.34rem;
+    }
+  }
+
+  section {
+    width: 75rem;
+    height: 25.74919rem;
+    border-radius: 1.875rem;
+    background: black;
+
+    z-index: -10;
+  }
+  img {
+    width: 38.40544rem;
+    height: 25.74919rem;
+
+    display: block;
+  }
+</style>

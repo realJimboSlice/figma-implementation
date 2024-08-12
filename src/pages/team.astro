@@ -1,0 +1,112 @@
+---
+import Layout from "../layout/Layout.astro";
+import GridCols from "../components/GridCols.astro";
+import AboveTitle from "../components/AboveTitle.astro";
+import Title from "../components/Title.astro";
+import Button from "../components/Button.astro";
+import Portrait from "../components/Portrait.astro";
+import Navigation from "../components/Navigation.astro";
+import ReadyToTalk from "../components/ReadyToTalk.astro";
+import "../styles/global.css";
+---
+
+<Layout>
+  <Navigation />
+  <div class="team-wrapper">
+    <img
+      src="./images/hero-team.png"
+      alt="A team focusing on something"
+      class="team-banner"
+    />
+
+    <div class="team-details">
+      <AboveTitle variant="yellow" title="Team" />
+      <Title title="The Consultors" />
+    </div>
+  </div>
+  <section class="full">
+    <div>
+      <GridCols cols="3">
+        <AboveTitle title="Growing with our Clients" variant="yellow" />
+      </GridCols>
+      <div class="calltoaction-section">
+        <Title
+          title="Meet Our Great Team"
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation."
+        />
+        <Button text="Join our team" />
+      </div>
+    </div>
+    <div class="team-grid">
+      <Portrait variant="sarah" title="Sarah Jasmine" />
+      <Portrait variant="john" title="John Carter" />
+      <Portrait variant="daisy" title="Daisy Stella" />
+      <Portrait variant="maya" title="Maya Elizabeth" />
+      <Portrait variant="ryan" title="Ryan Jackson" />
+      <Portrait variant="lilly" title="Lilly Victoria" />
+    </div>
+  </section>
+
+  <ReadyToTalk />
+</Layout>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .calltoaction-section {
+    width: 74.9rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 22rem;
+  }
+
+  section {
+    padding: 6.3rem;
+    display: grid;
+    gap: 6rem 4rem;
+    grid:
+      auto /
+      [full-start] 1fr
+      [content] minmax(0, var(--content-width))
+      1fr [full-end];
+
+    > * {
+      grid-column: content;
+    }
+
+    .full {
+      grid-column: full;
+    }
+  }
+
+  .full {
+    background: white;
+  }
+
+  .team-wrapper {
+    display: grid;
+    place-items: center;
+  }
+
+  .team-banner {
+    width: 120%;
+    height: 100%;
+    grid-area: 1 / 1;
+  }
+
+  .team-details {
+    padding: 1rem 1.8rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.63rem;
+    border-radius: 1.8rem;
+    backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.85);
+    grid-area: 1 / 1;
+  }
+</style>

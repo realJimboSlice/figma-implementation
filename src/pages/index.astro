@@ -1,0 +1,249 @@
+---
+import Layout from "../layout/Layout.astro";
+import GridCols from "../components/GridCols.astro";
+import Card from "../components/Card.astro";
+import AboveTitle from "../components/AboveTitle.astro";
+import Title from "../components/Title.astro";
+import Button from "../components/Button.astro";
+import ChecklistTemplate from "../components/ChecklistTemplate.astro";
+import VideoMockup from "../components/VideoMockup.astro";
+import Portrait from "../components/Portrait.astro";
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+---
+
+<Layout>
+  <Navigation />
+  <div class="containerabout">
+    <img
+      src="./images/hero-about.png"
+      alt="image of three people discussing"
+      class="hero-image"
+    />
+
+    <div class="services">
+      <AboveTitle variant="yellow" title="services" />
+      <Title title="Creative Services For Boost Your Business Growth" />
+    </div>
+  </div>
+
+  <section class="firstflex">
+    <div>
+      <GridCols cols="3">
+        <AboveTitle variant="green" title="Our Vision" />
+      </GridCols>
+      <Title
+        title="Turn your ideas into reality."
+        text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+      />
+      <ChecklistTemplate />
+    </div>
+    <div>
+      <figure>
+        <img
+          src="./images/ideas-img.png"
+          alt="image of people discussing ideas"
+          class="h2img"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <dl class="performance-mark-list">
+    <div>
+      <dt>Succesful Work</dt>
+      <dd>1128+</dd>
+    </div>
+    <div>
+      <dt>Team member</dt>
+      <dd>908+</dd>
+    </div>
+    <div>
+      <dt>Happy customers</dt>
+      <dd>258+</dd>
+    </div>
+    <div>
+      <dt>Creative Idea</dt>
+      <dd>564+</dd>
+    </div>
+  </dl>
+
+  <section class="full">
+    <div>
+      <GridCols cols="3">
+        <AboveTitle title="Growing with our Clients" variant="yellow" />
+      </GridCols>
+      <div class="sect-grow-clients">
+        <Title
+          title="Our core values & principles"
+          text="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps."
+        />
+        <Button text="Get in touch" />
+      </div>
+    </div>
+    <GridCols cols="4">
+      <Card title="Creative Ideas" variant="white" iconName="stack" />
+      <Card title="Best Features" variant="white" iconName="bar-chart" />
+      <Card title="Experience" variant="white" iconName="globe" />
+      <Card title="Easy Solutions" variant="white" iconName="cog" />
+    </GridCols>
+  </section>
+  <section class="sect-better-website">
+    <div class="centered">
+      <AboveTitle title="our history" variant="green" />
+      <Title
+        title="Better Website Means A User Experience"
+        text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+      />
+    </div>
+    <VideoMockup />
+  </section>
+  <section class="full">
+    <div>
+      <GridCols cols="3">
+        <AboveTitle variant="yellow" title="Our team" />
+      </GridCols>
+      <Title
+        title="We champion the bold to achieve the extraordinary"
+        text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team."
+      />
+    </div>
+    <div class="facefl">
+      <Portrait variant="sarah" name="Sarah Jasmine" />
+      <Portrait variant="john" name="John Carter" />
+      <Portrait variant="daisy" name="Daisy Stella" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .containerabout {
+    display: grid;
+    place-items: center;
+  }
+  .hero-image {
+    width: 120%;
+    height: 100%;
+  }
+  .hero-image,
+  .services {
+    grid-area: 1 / 1;
+  }
+
+  .services {
+    padding: 3rem 3.75rem 3.625rem 3.75rem;
+    border-radius: 1.8125rem;
+    background: rgba(255, 255, 255, 0.85);
+
+    backdrop-filter: blur(5.5px);
+    display: inline-flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+  .facefl {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 51px;
+  }
+  .centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6875rem;
+    text-align: center;
+  }
+  .firstflex {
+    display: flex;
+    flex-flow: row;
+    padding: 3rem;
+  }
+  .sect-grow-clients {
+    display: flex;
+
+    width: 74.875rem;
+    align-items: flex-end;
+    gap: 22rem;
+  }
+  section {
+    padding: 6.25rem;
+    display: grid;
+    grid:
+      auto /
+      [full-start] 1fr
+      [content] minmax(0, var(--content-width))
+      1fr [full-end];
+    gap: 2rem;
+
+    > * {
+      grid-column: content;
+    }
+
+    .full {
+      grid-column: full;
+    }
+  }
+
+  .full {
+    background: #f5f5f5;
+  }
+
+  .h2img {
+    border-radius: 1.2rem;
+  }
+  figure {
+    width: 400px;
+    height: auto;
+    position: relative;
+
+    &::before {
+      --diamonds-count: 12;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      inset: -50px -50px auto auto;
+      inline-size: calc(var(--diamonds-count) * 1.25rem - 0.6rem);
+      aspect-ratio: 1;
+      background: linear-gradient(150deg, #9d7544, #bb935b, #ba905b, #f6c37f) 0
+        0 / 100% 100%;
+      mask:
+        var(--diamonds) 0 0 / 1.325rem 1.325rem,
+        var(--diamonds) 0.67rem 0.67rem / 1.34rem 1.34rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -2rem;
+      top: -1rem;
+      background: var(--color-primary-green);
+      width: 150px;
+      height: 125px;
+      border-radius: 25px;
+      z-index: -1;
+    }
+  }
+
+  .performance-mark-list {
+    margin: 3rem;
+    text-align: center;
+
+    display: flex;
+    gap: 8.4375rem;
+    justify-content: center;
+
+    > * {
+      display: flex;
+      flex-direction: column-reverse;
+      font-size: 1.125rem;
+      color: #181818;
+
+      :last-child {
+        font-size: 3.125rem;
+        font-weight: 500;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+import "../styles/global.css";
+const { variant, name } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<article>
+  <div data-variant={variant}></div>
+  <div class="portrait">
+    <h4>{name}</h4>
+    <p>
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews.
+    </p>
+    <div class="iconflex">
+      <Icon name="instagram" />
+      <Icon name="facebook" />
+      <Icon name="twitter" />
+    </div>
+  </div>
+</article>
+<style>
+  [data-variant="sarah"] {
+    background-image: url("./images/sarah.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 22rem;
+    height: 23rem;
+    border-radius: var(--card-radius);
+  }
+  [data-variant="john"] {
+    background-image: url("./images/john.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 22rem;
+    height: 23rem;
+    border-radius: var(--card-radius);
+  }
+  [data-variant="daisy"] {
+    background-image: url("./images/daisy.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 22rem;
+    height: 23rem;
+    border-radius: var(--card-radius);
+  }
+  [data-variant="maya"] {
+    background-image: url("./images/maya.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 22rem;
+    height: 23rem;
+    border-radius: var(--card-radius);
+  }
+  [data-variant="ryan"] {
+    background-image: url("./images/ryan.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 22rem;
+    height: 23rem;
+    border-radius: var(--card-radius);
+  }
+  [data-variant="lilly"] {
+    background-image: url("./images/lilly.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 22rem;
+    height: 23rem;
+    border-radius: var(--card-radius);
+  }
+  [data-icon="instagram"] {
+    width: 1.32rem;
+    height: 1.32rem;
+  }
+  [data-icon="facebook"] {
+    width: 1.32rem;
+    height: 1.32rem;
+  }
+
+  [data-icon="twitter"] {
+    width: 1.32rem;
+    height: 1.32rem;
+  }
+
+  .iconflex {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .portrait {
+    display: flex;
+    width: 22rem;
+    flex-direction: column;
+    padding: var(--card-padding);
+    text-align: center;
+  }
+</style>

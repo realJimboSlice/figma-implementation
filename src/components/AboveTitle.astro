@@ -1,0 +1,30 @@
+---
+import "../styles/global.css";
+const { title, variant } = Astro.props;
+---
+
+<div data-variant={variant}>
+  <h2>{title}</h2>
+</div>
+
+<style>
+  div {
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+  }
+
+  [data-variant="black"] {
+    background: var(--color-primary-black);
+    color: var(--color-secondary-white);
+  }
+
+  [data-variant="yellow"] {
+    background: var(--color-primary-yellow);
+    color: var(--color-primary-black);
+  }
+  [data-variant="green"] {
+    background: var(--color-primary-green);
+    color: var(--color-secondary-white);
+  }
+</style>

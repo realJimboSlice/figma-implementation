@@ -1,0 +1,231 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layout/Layout.astro";
+import GridCols from "../components/GridCols.astro";
+import AboveTitle from "../components/AboveTitle.astro";
+import Title from "../components/Title.astro";
+import ChecklistTemplate from "../components/ChecklistTemplate.astro";
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+---
+
+<Layout>
+  <Navigation />
+  <div class="containerabout">
+    <img src="./images/serviceimg.jpg" alt="heroimage" class="hero-image" />
+
+    <div class="services">
+      <AboveTitle variant="yellow" title="service single" />
+      <Title title="Services Details" />
+    </div>
+  </div>
+  <section class="sect-fill">
+    <div class="sect-top">
+      <Title
+        title="Financial Projections"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      />
+      <div class="arrows">
+        <Icon name="white-arrow" />
+        <Icon name="yellow-arrow" />
+      </div>
+    </div>
+  </section>
+
+  <div class="card">
+    <section class="sect-grey">
+      <h3>The Balance Sheet</h3>
+      <p>
+        The Balance Sheet is a summary of the assets and liabilities and equity
+        of a business at a specific point of time.
+      </p>
+    </section>
+    <section class="sect-black">
+      <h3>Income Statement</h3>
+      <p>
+        The Income (Profit and Loss) Statement, commonly referred to as the P&L
+        statement, summarizes the revenue and expenses for a specific time
+        period (one month, one quarter, one year, etc.)
+      </p>
+    </section>
+    <section class="sect-grey">
+      <h3>Financial Plan</h3>
+      <p>
+        Keep your information current and review the documents on a regular
+        basis (monthly or more often if needed). Review them with key
+        individuals within your company.
+      </p>
+    </section>
+    <section class="sect-grey">
+      <h3>Financial Ratios</h3>
+      <p>
+        Rerum eaque esse reprehenderit enim vero quod, laboriosam id, unde
+        facilis illum consequuntur omnis a exercitationem, nobis explicabo
+        provident quaerat?
+      </p>
+    </section>
+  </div>
+  <div class="sect-bottom">
+    <figure>
+      <img src="./images/style.png" alt="" class="styleimg" />
+    </figure>
+    <div>
+      <GridCols cols="2">
+        <AboveTitle variant="yellow" title="we'll work with you" />
+      </GridCols>
+      <Title
+        title="What to Expect"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      />
+
+      <ChecklistTemplate />
+    </div>
+  </div>
+
+  <Layout />
+
+  <style>
+    /* Section Layouts */
+    section {
+      border-radius: 1.3rem;
+      background: var(--color-secondary-grey);
+      block-size: 55vh;
+      gap: 0.63rem;
+      display: grid;
+    }
+
+    .sect-top {
+      display: flex;
+      width: 75rem;
+      align-items: flex-end;
+      gap: 10rem;
+      padding-bottom: 50px;
+    }
+
+    .sect-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 155px;
+    }
+
+    /* Section Styling */
+
+    .sect-fill {
+      background: var(--color-secondary-white);
+    }
+
+    .sect-grey {
+      margin: 11px;
+      width: 52px;
+      height: auto;
+      padding: 35px;
+      color: #000;
+    }
+
+    .sect-black {
+      margin: 11px;
+      width: 52px;
+      height: auto;
+      padding: 35px;
+      background: #000;
+      --color-text: var(--color-secondary-white);
+      --color-text-blended: var(--color-secondary-white);
+    }
+
+    .sect-grey,
+    .sect-black h3 {
+      font-weight: 900;
+    }
+
+    /* Figure Styling */
+    figure {
+      width: 410px;
+      height: auto;
+      position: relative;
+    }
+
+    figure::before {
+      --diamonds-count: 12;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      inset: -45px 250px auto auto;
+      inline-size: calc(var(--diamonds-count) * 1.25rem - 0.6rem);
+      aspect-ratio: 1;
+      background: linear-gradient(150deg, #9d7544, #bb935b, #ba905b, #f6c37f) 0
+        0 / 100% 100%;
+      mask:
+        var(--diamonds) 0 0 / 1.25rem 1.25rem,
+        var(--diamonds) 0.66rem 0.66rem / 1.33rem 1.33rem;
+    }
+
+    figure::after {
+      content: "";
+      position: absolute;
+      right: 291px;
+      top: -1.02rem;
+      background: var(--color-primary-green);
+      width: 145px;
+      height: 125px;
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    /* Image Styling */
+    .styleimg {
+      border-radius: 1.23rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-image,
+    .services {
+      grid-area: 1 / 1;
+    }
+
+    /* Services Styling */
+    .services {
+      padding: 2rem 2.5rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .services h3 {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 3.5rem;
+    }
+
+    /* Layout Adjustments */
+    .card {
+      display: flex;
+    }
+
+    .card > * {
+      flex: 1 1 auto;
+    }
+
+    .arrows {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    [data-icon="white-arrow"],
+    [data-icon="yellow-arrow"] {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    .containerabout {
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</Layout>
